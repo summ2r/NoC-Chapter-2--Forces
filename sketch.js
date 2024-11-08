@@ -4,4 +4,9 @@ function setup() {
 
 function draw() {
   background(220);
+
+  mover.appplyForce(wind);
+  mover.applyForce(gravity);
+  mover.update();
+
 }
