@@ -1,24 +1,26 @@
 class Mover {
   constructor() {
-    this.position = createVector(width/2, height/2);
-    this.velocity = createVector();
-    this.acceleration = createVector();
-    this.velocity.add(this.acceleration);
+    this.position = createVector(random(width), random(height));
+    this.velocity = createVector(0, 0);
+    this.acceleration = createVector(0, 0);
+    this.mass = 10;
   }
+
   applyForce(force) {
-  this.acceleration = force;
-  this.acceleration.add(force);
+    let f = froce.copy();
+    f.div(this.mass);
+    this.acceleration.add(f);
   }
 
- update() {
-  this.velocity.add(this.acceleration);
-  this.position.add(this.velocity);
+  update() {
+   this.velocity.add(this.acceleration);
+   this.position.add(this.velocity);
 
-  this.acceleration.mult(0);
+   this.acceleration.mult(0);
   }
 
- show() {
-  circle(200, 200, 20);
+  show() {
+   circle(200, 200, 20);
   }
 }
 

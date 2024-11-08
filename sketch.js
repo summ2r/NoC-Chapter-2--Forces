@@ -1,18 +1,17 @@
-let mover;
+let moverA = new Mover();
+let moverB = new Mover();
+
+let wind = createVector(1, 0);
 
 function setup() {
   createCanvas(400, 400);
-
-  mover = new Mover();
 }
 
 function draw() {
   background(220);
 
-  if(mouseIsPressed) {
-    let wind = createVector(0.5, 0);
-    mover.applyForce(wind);
-  }
+  moverA.applyForce(wind);
+  moverB.appplyForce(wind);
 
   mover.update();
   mover.show();
