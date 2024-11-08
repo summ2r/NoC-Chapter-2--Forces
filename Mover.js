@@ -7,7 +7,7 @@ class Mover {
   }
 
   applyForce(force) {
-    let f = froce.copy();
+    let f = force.copy();
     f.div(this.mass);
     this.acceleration.add(f);
   }
