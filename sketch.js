@@ -1,19 +1,22 @@
-let moverA = new Mover();
-let moverB = new Mover();
-
-let wind = createVector(1, 0);
+let mover;
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(640, 240);
+  mover = new mover();
 }
 
 function draw() {
-  background(220);
+  background(225);
 
-  moverA.applyForce(wind);
-  moverB.appplyForce(wind);
+  let gravity = createVector(0, 0.1);
+  mover.applyForce(gravity);
+
+  if (mouseIsPressed) {
+    let wind = createVector(0.1, 0);
+    mover.applyForce(wind);
+  }
 
   mover.update();
-  mover.show();
-
+  mover.display();
+  mover.checkEdges();
 }
